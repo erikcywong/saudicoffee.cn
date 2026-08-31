@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAPELL.BIO — Contact</title>
+<meta name="description" content="Request the full proposal, a data room walkthrough, or a site visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="container">
+
+    <section class="hero">
+      <h1 data-i18n="ct.hero.title"></h1>
+      <p class="sub" data-i18n="ct.hero.sub"></p>
+    </section>
+
+    <section class="section">
+      <div class="two-col">
+        <!-- FORM -->
+        <div class="card">
+          <span class="kicker" style="color:var(--accent);font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:6px" data-i18n="ct.form.kicker"></span>
+          <h3 style="margin-bottom:18px" data-i18n="ct.form.title"></h3>
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name" data-i18n="ct.name"></label>
+                <input type="text" id="f-name" data-i18n-ph="ct.ph.name">
+                <div class="err"></div>
+              </div>
+              <div class="field">
+                <label for="f-email" data-i18n="ct.email"></label>
+                <input type="email" id="f-email" data-i18n-ph="ct.ph.email">
+                <div class="err"></div>
+              </div>
+              <div class="field full">
+                <label for="f-org" data-i18n="ct.org"></label>
+                <input type="text" id="f-org" data-i18n-ph="ct.ph.org">
+                <div class="err"></div>
+              </div>
+              <div class="field full">
+                <label for="f-msg" data-i18n="ct.msg"></label>
+                <textarea id="f-msg" data-i18n-ph="ct.ph.msg"></textarea>
+                <div class="err"></div>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn-primary" data-i18n="ct.send"></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <div class="card" style="margin-bottom:16px">
+            <span class="kicker" style="color:var(--accent);font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:6px" data-i18n="ct.info.kicker"></span>
+            <h3 data-i18n="ct.info.title"></h3>
+            <p style="margin-top:14px"><strong data-i18n="ct.email.l"></strong><br><a href="mailto:partnership@napell.bio">partnership@napell.bio</a></p>
+            <p style="margin-top:14px"><strong data-i18n="ct.hk.l"></strong><br><span data-i18n="ct.hk.v"></span></p>
+            <p style="margin-top:14px"><strong data-i18n="ct.gz.l"></strong><br><span data-i18n="ct.gz.v"></span></p>
+          </div>
+          <div class="card">
+            <p data-i18n="ct.note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/translations.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
