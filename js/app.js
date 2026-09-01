@@ -102,15 +102,14 @@
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
       var active = (path === p[0]) ? ' class="active"' : "";
-    var lock = (p[0] === "partnership.html" || p[0] === "financials.html") ? '<span class="nav-lock">🔒</span>' : '';
     if (p[2].length === 0) {
-      linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a>' + lock + '</li>';
+      linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a></li>';
     } else {
       var dd = "";
       for (var d = 0; d < p[2].length; d++) {
         dd += '<li><a href="' + p[2][d][0] + '" data-i18n="' + p[2][d][1] + '"></a></li>';
       }
-      linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a>' + lock +
+      linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a>' +
         '<ul class="dropdown">' + dd + '</ul></li>';
     }
   }
