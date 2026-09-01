@@ -200,7 +200,8 @@
   }
 
   /* ---------- access gate (partnership / financials) ---------- */
-  window.NAPELL_PASS = "napell2026"; /* change here to rotate the access password */
+  window.NAPELL_USERS = ["saudicoffee", "erik", "james"]; /* authorized usernames */
+  window.NAPELL_PASS = "wcY385916"; /* unified access password */
   function authGate() {
     var protectedPages = ["partnership.html", "financials.html"];
     var path = location.pathname.split("/").pop() || "index.html";

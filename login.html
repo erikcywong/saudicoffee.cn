@@ -20,6 +20,11 @@
         <p data-i18n="login.sub"></p>
         <form id="loginForm" novalidate>
           <div class="field">
+            <label for="f-user" data-i18n="login.username"></label>
+            <input type="text" id="f-user" autocomplete="username" autocapitalize="none" spellcheck="false" data-i18n-ph="login.uph">
+            <span class="err" id="user-err"></span>
+          </div>
+          <div class="field">
             <label for="f-pass" data-i18n="login.password"></label>
             <input type="password" id="f-pass" autocomplete="current-password" data-i18n-ph="login.ph">
             <span class="err" id="pass-err"></span>
@@ -43,18 +48,32 @@
     if (!form) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var input = document.getElementById("f-pass");
-      var err = document.getElementById("pass-err");
-      var field = input.closest(".field");
-      if (input.value === window.NAPELL_PASS) {
+      var uInput = document.getElementById("f-user");
+      var pInput = document.getElementById("f-pass");
+      var uErr = document.getElementById("user-err");
+      var pErr = document.getElementById("pass-err");
+      var uField = uInput.closest(".field");
+      var pField = pInput.closest(".field");
+      var users = window.NAPELL_USERS || [];
+      var uname = uInput.value.trim().toLowerCase();
+      var ok = (users.indexOf(uname) > -1) && (pInput.value === window.NAPELL_PASS);
+      uField.classList.remove("invalid");
+      pField.classList.remove("invalid");
+      if (ok) {
         sessionStorage.setItem("napell_auth", "1");
         var next = new URLSearchParams(location.search).get("next") || "index.html";
         location.href = next;
       } else {
-        field.classList.add("invalid");
-        err.textContent = window.__t ? window.__t("login.err") : "Incorrect password.";
-        input.focus();
-        input.select();
+        var msg = window.__t ? window.__t("login.err") : "Incorrect username or password.";
+        if (users.indexOf(uname) === -1) {
+          uField.classList.add("invalid");
+          uErr.textContent = msg;
+        } else {
+          pField.classList.add("invalid");
+          pErr.textContent = msg;
+        }
+        uInput.focus();
+        uInput.select();
       }
     });
   });
