@@ -162,6 +162,9 @@ const I18N = {
     "ct.info.kicker":"Direct","ct.info.title":"Napell Biotech (Hong Kong) Ltd.",
     "ct.email.l":"Partnership inquiries","ct.hk.l":"Headquarters","ct.hk.v":"Hong Kong SAR, China","ct.gz.l":"R&D & Production Base","ct.gz.v":"Guangzhou, China",
     "ct.note":"Prefer a formal channel? This proposal is also available through MISA's investor services and the Saudi Coffee Company's business development office.",
+    "ct.whatsapp":"WhatsApp","ct.wechat":"WeChat",
+    /* login */
+    "login.title":"Partner Access","login.sub":"The full partnership structure and financial model are confidential and restricted to invited counterparties.","login.password":"Access Password","login.ph":"Enter access password","login.btn":"Unlock","login.err":"Incorrect password.","login.hint":"Need access? Request it through the contact page.","login.back":"Back to Home",
     /* footer */
     "note.m1":"81 systems · 10.8 acres","note.m3":"vs. 36-48 months traditional","note.m3s":"vs. 36-48 months","note.m4":"Vertical, controlled environment","note.m5":"¥6.61 cost → ¥25 price","note.m6":"Lab → nursery → farm → brand","tech.sys":"Aeroponic systems per module","tech.sysn":"10.8-acre integrated module","pill.pct":"PCT · International filing underway","part.v1":"Pilot JV size","part.v1n":"Tissue culture center, Jazan","part.v2":"Napell equity","part.v2n":"Technology + equipment + know-how","part.v3":"Saudi-side equity","part.v3n":"Capital + land + licensing + offtake","fin.y5":"Year 5","fin.y7":"Year 7","fin.y10":"Year 10","fin.p4n":"Seedlings + royalties",
     "ft.rights":"© 2026 Napell Biotech (Hong Kong) Ltd. All rights reserved.",
@@ -320,6 +323,9 @@ const I18N = {
     "ct.info.kicker":"直接联系","ct.info.title":"Napell Biotech (Hong Kong) Ltd.",
     "ct.email.l":"合作洽谈","ct.hk.l":"总部","ct.hk.v":"中国香港","ct.gz.l":"研发与生产基地","ct.gz.v":"中国广州",
     "ct.note":"偏好正式渠道？本提案亦可经由 MISA 投资者服务及沙特咖啡公司商务拓展办公室获取。",
+    "ct.whatsapp":"WhatsApp","ct.wechat":"微信",
+    /* login */
+    "login.title":"合作伙伴登录","login.sub":"完整的合作结构与财务模型为保密内容，仅限受邀合作方访问。","login.password":"访问密码","login.ph":"请输入访问密码","login.btn":"解锁","login.err":"密码错误。","login.hint":"需要访问权限？请通过联系页面申请。","login.back":"返回首页",
     "note.m1":"81 套系统 · 10.8 英亩","note.m3":"传统方式需 36-48 个月","note.m3s":"对比 36-48 个月","note.m4":"垂直可控环境","note.m5":"成本 ¥6.61 → 售价 ¥25","note.m6":"实验室→苗圃→农场→品牌","tech.sys":"单模块气雾培系统数","tech.sysn":"10.8 英亩一体化模块","pill.pct":"PCT · 国际申请进行中","part.v1":"试点合资规模","part.v1n":"Jazan 组培中心","part.v2":"Napell 持股","part.v2n":"技术 + 设备 + 运营知识","part.v3":"沙特方持股","part.v3n":"资本 + 土地 + 牌照 + 采购","fin.y5":"第 5 年","fin.y7":"第 7 年","fin.y10":"第 10 年","fin.p4n":"种苗 + 许可收入",
     "ft.rights":"© 2026 Napell Biotech (Hong Kong) Ltd. 保留所有权利。",
     "ft.patent":"专利 CN 202611094298.6 · 国际申请进行中",
@@ -477,6 +483,9 @@ const I18N = {
     "ct.info.kicker":"مباشرة","ct.info.title":"Napell Biotech (Hong Kong) Ltd.",
     "ct.email.l":"استفسارات الشراكة","ct.hk.l":"المقر الرئيسي","ct.hk.v":"هونغ كونغ، الصين","ct.gz.l":"قاعدة البحث والتطوير والإنتاج","ct.gz.v":"قوانغتشو، الصين",
     "ct.note":"تفضّل القنوات الرسمية؟ يتوفر هذا المقترح أيضًا عبر خدمات المستثمرين بوزارة الاستثمار ومكتب تطوير الأعمال بشركة القهوة السعودية.",
+    "ct.whatsapp":"واتساب","ct.wechat":"وي شات",
+    /* login */
+    "login.title":"دخول الشركاء","login.sub":"هيكل الشراكة الكامل والنموذج المالي سرّيان، ويقتصر الوصول على الأطراف المدعوة.","login.password":"كلمة مرور الوصول","login.ph":"أدخل كلمة مرور الوصول","login.btn":"فتح","login.err":"كلمة المرور غير صحيحة.","login.hint":"تحتاج وصولًا؟ اطلبه عبر صفحة الاتصال.","login.back":"العودة إلى الرئيسية",
     "note.m1":"81 نظامًا · 10.8 فدان","note.m3":"مقابل 36-48 شهرًا تقليديًا","note.m3s":"مقابل 36-48 شهرًا","note.m4":"بيئة عمودية متحكم بها","note.m5":"التكلفة ¥6.61 → السعر ¥25","note.m6":"مختبر → مشتل → مزرعة → علامة","tech.sys":"أنظمة هوائية لكل وحدة","tech.sysn":"وحدة متكاملة بمساحة 10.8 فدان","pill.pct":"PCT · إيداع دولي جارٍ","part.v1":"حجم المشروع التجريبي","part.v1n":"مركز زراعة الأنسجة، جازان","part.v2":"حصة Napell","part.v2n":"تقنية + معدات + خبرات تشغيل","part.v3":"حصة الجانب السعودي","part.v3n":"رأس مال + أرض + تراخيص + شراء","fin.y5":"السنة 5","fin.y7":"السنة 7","fin.y10":"السنة 10","fin.p4n":"شتلات + عوائد الترخيص",
     "ft.rights":"© 2026 Napell Biotech (Hong Kong) Ltd. جميع الحقوق محفوظة.",
     "ft.patent":"براءة اختراع CN 202611094298.6 · إيداع دولي جارٍ",

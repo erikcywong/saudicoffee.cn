@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAPELL.BIO — Partner Access</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="container">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <span class="lock-icon">🔒</span>
+        <h1 data-i18n="login.title"></h1>
+        <p data-i18n="login.sub"></p>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="f-pass" data-i18n="login.password"></label>
+            <input type="password" id="f-pass" autocomplete="current-password" data-i18n-ph="login.ph">
+            <span class="err" id="pass-err"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:10px" data-i18n="login.btn"></button>
+        </form>
+        <div class="note-box" style="margin-top:22px" data-i18n="login.hint"></div>
+        <a class="auth-back" href="index.html" data-i18n="login.back"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/translations.js"></script>
+<script src="js/app.js"></script>
+<script>
+(function () {
+  "use strict";
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("loginForm");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var input = document.getElementById("f-pass");
+      var err = document.getElementById("pass-err");
+      var field = input.closest(".field");
+      if (input.value === window.NAPELL_PASS) {
+        sessionStorage.setItem("napell_auth", "1");
+        var next = new URLSearchParams(location.search).get("next") || "index.html";
+        location.href = next;
+      } else {
+        field.classList.add("invalid");
+        err.textContent = window.__t ? window.__t("login.err") : "Incorrect password.";
+        input.focus();
+        input.select();
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

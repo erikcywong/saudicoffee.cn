@@ -46,6 +46,11 @@
     for (var m = 0; m < ars.length; m++) {
       ars[m].setAttribute("aria-label", t(ars[m].getAttribute("data-i18n-aria")));
     }
+    /* lang menu active state */
+    var menuBtns = document.querySelectorAll(".lang-menu button[data-lang]");
+    for (var n = 0; n < menuBtns.length; n++) {
+      menuBtns[n].classList.toggle("active", menuBtns[n].getAttribute("data-lang") === lang);
+    }
     /* lang button label */
     var btn = document.querySelector(".lang-btn");
     if (btn) btn.textContent = t("nav.language");
@@ -97,34 +102,50 @@
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
       var active = (path === p[0]) ? ' class="active"' : "";
-      if (p[2].length === 0) {
-        linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a></li>';
-      } else {
-        var dd = "";
-        for (var d = 0; d < p[2].length; d++) {
-          dd += '<li><a href="' + p[2][d][0] + '" data-i18n="' + p[2][d][1] + '"></a></li>';
-        }
-        linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a><span class="caret">▼</span>' +
-          '<ul class="dropdown">' + dd + '</ul></li>';
+    var lock = (p[0] === "partnership.html" || p[0] === "financials.html") ? '<span class="nav-lock">🔒</span>' : '';
+    if (p[2].length === 0) {
+      linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a>' + lock + '</li>';
+    } else {
+      var dd = "";
+      for (var d = 0; d < p[2].length; d++) {
+        dd += '<li><a href="' + p[2][d][0] + '" data-i18n="' + p[2][d][1] + '"></a></li>';
       }
+      linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a>' + lock +
+        '<ul class="dropdown">' + dd + '</ul></li>';
     }
-    linksHtml += '<li><a href="contact.html"' + (path === "contact.html" ? ' class="active"' : "") + ' data-i18n="nav.contact"></a></li>';
-    nav.innerHTML =
-      '<a class="logo" href="index.html">NAPELL<span>.BIO</span></a>' +
-      '<button class="menu-toggle" data-i18n-aria="nav.home" aria-label="Menu">☰</button>' +
-      '<ul class="nav-links">' + linksHtml + '</ul>' +
-      '<button class="lang-btn" data-i18n="nav.language"></button>';
+  }
+  linksHtml += '<li><a href="contact.html"' + (path === "contact.html" ? ' class="active"' : "") + ' data-i18n="nav.contact"></a></li>';
+  var langWrap =
+    '<div class="lang-wrap">' +
+    '<button class="lang-btn" data-i18n="nav.language"></button>' +
+    '<ul class="lang-menu">' +
+    '<li><button data-lang="en">English<span class="l-code">EN</span></button></li>' +
+    '<li><button data-lang="zh">简体中文<span class="l-code">中文</span></button></li>' +
+    '<li><button data-lang="ar">العربية<span class="l-code">عربي</span></button></li>' +
+    '</ul></div>';
+  nav.innerHTML =
+    '<a class="logo" href="index.html">NAPELL<span>.BIO</span></a>' +
+    '<button class="menu-toggle" data-i18n-aria="nav.home" aria-label="Menu">☰</button>' +
+    '<ul class="nav-links">' + linksHtml + '</ul>' +
+    langWrap;
 
     /* insert navbar at top of body */
     document.body.insertBefore(nav, document.body.firstChild);
 
-    /* language cycling button */
+    /* language dropdown (3 explicit options) */
     var langBtn = nav.querySelector(".lang-btn");
-    langBtn.addEventListener("click", function () {
-      var cur = getLang() || "en";
-      var next = LANGS[(LANGS.indexOf(cur) + 1) % LANGS.length];
-      setLang(next);
+    var langMenu = nav.querySelector(".lang-menu");
+    langBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      langMenu.classList.toggle("open");
     });
+    langMenu.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-lang]");
+      if (!b) return;
+      setLang(b.getAttribute("data-lang"));
+      langMenu.classList.remove("open");
+    });
+    document.addEventListener("click", function () { langMenu.classList.remove("open"); });
 
     /* mobile toggle */
     var mt = nav.querySelector(".menu-toggle");
@@ -178,9 +199,22 @@
     });
   }
 
+  /* ---------- access gate (partnership / financials) ---------- */
+  window.NAPELL_PASS = "napell2026"; /* change here to rotate the access password */
+  function authGate() {
+    var protectedPages = ["partnership.html", "financials.html"];
+    var path = location.pathname.split("/").pop() || "index.html";
+    if (protectedPages.indexOf(path) > -1 && sessionStorage.getItem("napell_auth") !== "1") {
+      location.href = "login.html?next=" + encodeURIComponent(path);
+      return false;
+    }
+    return true;
+  }
+
   /* ---------- boot ---------- */
   document.addEventListener("DOMContentLoaded", function () {
     injectChrome();
+    if (!authGate()) return; /* redirect to login before anything else */
     var lang = getLang();
     applyLang(lang || "en");
     if (!lang) buildModal(); /* landing: language choice overlay */
