@@ -92,7 +92,7 @@
       ["technology.html", "nav.technology", [["technology.html#tissue", "nav.dd.tissue"], ["technology.html#aero", "nav.dd.aero"], ["technology.html#dash", "nav.dd.dash"]]],
       ["partnership.html", "nav.partnership", [["partnership.html", "nav.dd.jv"], ["partnership.html#pilot", "nav.dd.pilot"], ["partnership.html#gov", "nav.dd.gov"]]],
       ["roadmap.html", "nav.roadmap", [["roadmap.html", "nav.dd.phases"], ["roadmap.html#milestones", "nav.dd.ms"]]],
-      ["financials.html", "nav.financials", [["financials.html", "nav.dd.unit"], ["financials.html#proj", "nav.dd.proj"]]],
+      ["financials.html", "nav.financials", [["financials.html", "nav.dd.unit"], ["costings.html", "nav.dd.costings"], ["financials.html#proj", "nav.dd.proj"]]],
       ["benchmarking.html", "nav.benchmark", [["benchmarking.html", "nav.dd.bm.v"], ["benchmarking.html#shakeout", "nav.dd.bm.sh"], ["benchmarking.html#peers", "nav.dd.bm.ly"], ["benchmarking.html#gap", "nav.dd.bm.wh"]]]
     ];
     var path = location.pathname.split("/").pop() || "index.html";
@@ -102,7 +102,8 @@
     var linksHtml = "";
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
-      var active = (path === p[0]) ? ' class="active"' : "";
+      var isFinGrp = p[0] === "financials.html" && (path === "financials.html" || path === "costings.html");
+      var active = (path === p[0] || isFinGrp) ? ' class="active"' : "";
     if (p[2].length === 0) {
       linksHtml += '<li><a href="' + p[0] + '"' + active + ' data-i18n="' + p[1] + '"></a></li>';
     } else {
@@ -203,7 +204,7 @@
   window.NAPELL_USERS = ["saudicoffee", "erik.wong", "james"]; /* authorized usernames */
   window.NAPELL_PASS = "wcY385916"; /* unified access password */
   function authGate() {
-    var protectedPages = ["partnership.html", "financials.html"];
+    var protectedPages = ["partnership.html", "financials.html", "costings.html"];
     var path = location.pathname.split("/").pop() || "index.html";
     if (protectedPages.indexOf(path) > -1 && sessionStorage.getItem("napell_auth") !== "1") {
       location.href = "login.html?next=" + encodeURIComponent(path);
