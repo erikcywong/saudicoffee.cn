@@ -92,7 +92,8 @@
       ["technology.html", "nav.technology", [["technology.html#tissue", "nav.dd.tissue"], ["technology.html#aero", "nav.dd.aero"], ["technology.html#dash", "nav.dd.dash"]]],
       ["partnership.html", "nav.partnership", [["partnership.html", "nav.dd.jv"], ["partnership.html#pilot", "nav.dd.pilot"], ["partnership.html#gov", "nav.dd.gov"]]],
       ["roadmap.html", "nav.roadmap", [["roadmap.html", "nav.dd.phases"], ["roadmap.html#milestones", "nav.dd.ms"]]],
-      ["financials.html", "nav.financials", [["financials.html", "nav.dd.unit"], ["financials.html#proj", "nav.dd.proj"]]]
+      ["financials.html", "nav.financials", [["financials.html", "nav.dd.unit"], ["financials.html#proj", "nav.dd.proj"]]],
+      ["benchmarking.html", "nav.benchmark", [["benchmarking.html", "nav.dd.bm.v"], ["benchmarking.html#shakeout", "nav.dd.bm.sh"], ["benchmarking.html#peers", "nav.dd.bm.ly"], ["benchmarking.html#gap", "nav.dd.bm.wh"]]]
     ];
     var path = location.pathname.split("/").pop() || "index.html";
 
