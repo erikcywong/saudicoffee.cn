@@ -200,7 +200,7 @@
   }
 
   /* ---------- access gate (partnership / financials) ---------- */
-  window.NAPELL_USERS = ["saudicoffee", "erik", "james"]; /* authorized usernames */
+  window.NAPELL_USERS = ["saudicoffee", "erik.wong", "james"]; /* authorized usernames */
   window.NAPELL_PASS = "wcY385916"; /* unified access password */
   function authGate() {
     var protectedPages = ["partnership.html", "financials.html"];
