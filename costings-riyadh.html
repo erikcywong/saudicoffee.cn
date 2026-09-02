@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAPELL.BIO — Costings · Riyadh Deployment</title>
+<meta name="description" content="Riyadh deployment cost estimate for the aeroponic coffee nursery: Guangzhou→Riyadh landed-cost build-up, one-off services, per-seedling forecast and estimated startup capital (Riyadh base).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.ry-h2{font-size:clamp(21px,2.4vw,28px);font-weight:800;letter-spacing:-.3px;margin:0 0 8px}
+.ry-d{color:var(--muted);max-width:880px;margin:0 0 18px;line-height:1.6}
+.ry-h3{font-size:17px;font-weight:800;margin:26px 0 12px}
+.ry-fx .ry-fx-t{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.ry-fx .ry-fx-v{font-size:23px;font-weight:800;color:var(--text);margin:7px 0 4px;letter-spacing:-.3px;white-space:nowrap}
+.ry-fx .ry-fx-n{font-size:12px;color:var(--muted);line-height:1.5}
+.ry-route{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ry-route .ry-step{background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:600}
+.ry-route .ry-arr{color:var(--muted);font-weight:800;padding:0 2px}
+[dir=rtl] .ry-route .ry-arr{transform:scaleX(-1);display:inline-block}
+.ry-pill{display:inline-block;padding:2px 11px;border-radius:999px;font-size:12.5px;font-weight:800;border:1px solid;white-space:nowrap}
+.ry-pill.up{color:#f0a020;border-color:rgba(240,160,32,.45);background:rgba(240,160,32,.08)}
+.ry-pill.down{color:var(--green);border-color:rgba(0,186,124,.45);background:rgba(0,186,124,.08)}
+.ry-pill.eq{color:var(--muted);border-color:var(--border)}
+tr.ry-vat td{color:var(--muted);font-size:13px;border-top:1px dashed var(--border)}
+tr.ry-vat td.num{color:var(--muted)}
+.ry-tbl td.num .ref{display:block;margin-inline-start:0;font-size:11px;margin-top:1px;letter-spacing:0}
+.ry-tbl th.num{text-align:end;white-space:nowrap}
+.ry-tbl td.note.ry-tn{font-size:13px;max-width:340px}
+.ry-up{color:#f0a020;font-weight:800}
+.ry-margin{color:var(--green);font-weight:700;margin-top:16px;text-align:center}
+.ry-cta{display:inline-block;margin-top:30px;padding:11px 24px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-weight:700}
+.ry-cta:hover{background:var(--accent);color:#fff;text-decoration:none}
+.ry-ref2{display:block;margin-inline-start:0;font-size:11px;margin-top:2px;color:var(--muted);font-weight:600}
+.hero .note{font-size:13px;color:var(--muted);max-width:820px;margin-left:auto;margin-right:auto}
+@media(max-width:900px){.ry-tbl td.note.ry-tn{max-width:none}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="container">
+
+    <section class="hero">
+      <span class="badge" data-i18n="ry.hero.badge"></span>
+      <h1 data-i18n="ry.hero.title"></h1>
+      <p class="sub" data-i18n="ry.hero.sub"></p>
+      <p class="note" data-i18n="ry.hero.scn"></p>
+      <p class="note" style="margin-top:8px" data-i18n="ry.hero.fx"></p>
+
+      <!-- view switch: unit economics / costings (china + riyadh) / projections -->
+      <div class="view-switch">
+        <a href="financials.html" data-i18n="nav.dd.unit"></a>
+        <a href="costings.html" data-i18n="nav.dd.costings"></a>
+        <a href="costings-riyadh.html" class="on" data-i18n="nav.dd.costingsRy"></a>
+        <a href="financials.html#proj" data-i18n="nav.dd.proj"></a>
+      </div>
+    </section>
+
+    <!-- FX BASIS + SHIPPING CORRIDOR -->
+    <section class="section">
+      <h2 class="ry-h2" data-i18n="ry.fx.title"></h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:6px">
+        <div class="card ry-fx"><div class="ry-fx-t" data-i18n="ry.fx1.t"></div><div class="ry-fx-v" data-i18n="ry.fx1.v"></div><div class="ry-fx-n" data-i18n="ry.fx1.n"></div></div>
+        <div class="card ry-fx"><div class="ry-fx-t" data-i18n="ry.fx2.t"></div><div class="ry-fx-v" data-i18n="ry.fx2.v"></div><div class="ry-fx-n" data-i18n="ry.fx2.n"></div></div>
+        <div class="card ry-fx"><div class="ry-fx-t" data-i18n="ry.fx3.t"></div><div class="ry-fx-v" data-i18n="ry.fx3.v"></div><div class="ry-fx-n" data-i18n="ry.fx3.n"></div></div>
+      </div>
+      <h3 class="ry-h3" data-i18n="ry.route.title"></h3>
+      <div class="ry-route">
+        <span class="ry-step" data-i18n="ry.r1"></span><span class="ry-arr">→</span>
+        <span class="ry-step" data-i18n="ry.r2"></span><span class="ry-arr">→</span>
+        <span class="ry-step" data-i18n="ry.r3"></span><span class="ry-arr">→</span>
+        <span class="ry-step" data-i18n="ry.r4"></span><span class="ry-arr">→</span>
+        <span class="ry-step" data-i18n="ry.r5"></span>
+      </div>
+    </section>
+
+    <!-- TABLE A — EQUIPMENT LANDED-COST BUILD-UP -->
+    <section class="section">
+      <h2 class="ry-h2" data-i18n="ry.secA.t"></h2>
+      <p class="ry-d" data-i18n="ry.secA.d"></p>
+      <div class="table-wrap">
+        <table class="ry-tbl">
+          <thead>
+            <tr><th data-i18n="ry.th.item"></th><th class="num" data-i18n="ry.th.usd"></th><th class="num" data-i18n="ry.th.sar"></th><th data-i18n="ry.th.note"></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="ry.a1"></td>
+              <td class="num">US$5,156</td>
+              <td class="num">SAR 19,335<span class="ref">US$5,156 · ¥35,060</span></td>
+              <td class="note ry-tn" data-i18n="ry.an1"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a2"></td>
+              <td class="num">US$1,200</td>
+              <td class="num">SAR 4,500<span class="ref">US$1,200 · ¥8,160</span></td>
+              <td class="note ry-tn" data-i18n="ry.an2"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a3"></td>
+              <td class="num">US$12,000</td>
+              <td class="num">SAR 45,000<span class="ref">US$12,000 · ¥81,600</span></td>
+              <td class="note ry-tn" data-i18n="ry.an3"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a4"></td>
+              <td class="num">US$873</td>
+              <td class="num">SAR 3,274<span class="ref">US$873 · ¥5,936</span></td>
+              <td class="note ry-tn" data-i18n="ry.an4"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a5"></td>
+              <td class="num">US$1,320</td>
+              <td class="num">SAR 4,950<span class="ref">US$1,320 · ¥8,976</span></td>
+              <td class="note ry-tn" data-i18n="ry.an5"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a6"></td>
+              <td class="num">US$3,200</td>
+              <td class="num">SAR 12,000<span class="ref">US$3,200 · ¥21,760</span></td>
+              <td class="note ry-tn" data-i18n="ry.an6"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a7"></td>
+              <td class="num">US$533</td>
+              <td class="num">SAR 1,999<span class="ref">US$533 · ¥3,624</span></td>
+              <td class="note ry-tn" data-i18n="ry.an7"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a8"></td>
+              <td class="num">US$900</td>
+              <td class="num">SAR 3,375<span class="ref">US$900 · ¥6,120</span></td>
+              <td class="note ry-tn" data-i18n="ry.an8"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a9"></td>
+              <td class="num">US$10,955</td>
+              <td class="num">SAR 41,083<span class="ref">US$10,955 · ¥74,497</span></td>
+              <td class="note ry-tn" data-i18n="ry.an9"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.a10"></td>
+              <td class="num">US$6,943</td>
+              <td class="num">SAR 26,035<span class="ref">US$6,943 · ¥47,209</span></td>
+              <td class="note ry-tn" data-i18n="ry.an10"></td>
+            </tr>
+            <tr class="subtotal"><td data-i18n="ry.secA.sub"></td><td class="num">US$249,317</td><td class="num">SAR 934,939<span class="ref">US$249,317 · ¥1,695,355</span></td><td class="note ry-tn">FOB US$206,237 + 43,080</td></tr>
+            <tr class="ry-vat"><td data-i18n="ry.secA.vat"></td><td class="num">US$34,510</td><td class="num">SAR 129,412<span class="ref">US$34,510 · ¥234,667</span></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TABLE B — ONE-OFF SERVICES (RIYADH) -->
+    <section class="section">
+      <h2 class="ry-h2" data-i18n="ry.secB.t"></h2>
+      <p class="ry-d" data-i18n="ry.secB.d"></p>
+      <div class="table-wrap">
+        <table class="ry-tbl">
+          <thead>
+            <tr><th data-i18n="ry.th.item"></th><th class="num" data-i18n="ry.th.usd"></th><th class="num" data-i18n="ry.th.sar"></th><th data-i18n="ry.th.note"></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="ry.b1"></td>
+              <td class="num">US$32,000<span class="ref">26,000–38,000</span></td>
+              <td class="num">SAR 120,000<span class="ref">US$32,000 · ¥217,600</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn1"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.b2"></td>
+              <td class="num">US$18,000<span class="ref">14,000–22,000</span></td>
+              <td class="num">SAR 67,500<span class="ref">US$18,000 · ¥122,400</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn2"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.b3"></td>
+              <td class="num">US$30,000<span class="ref">20,000–40,000</span></td>
+              <td class="num">SAR 112,500<span class="ref">US$30,000 · ¥204,000</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn3"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.b4"></td>
+              <td class="num">US$6,000<span class="ref">4,000–8,000</span></td>
+              <td class="num">SAR 22,500<span class="ref">US$6,000 · ¥40,800</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn4"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.b5"></td>
+              <td class="num">US$5,000<span class="ref">3,500–6,500</span></td>
+              <td class="num">SAR 18,750<span class="ref">US$5,000 · ¥34,000</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn5"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.b6"></td>
+              <td class="num">US$4,000<span class="ref">2,500–6,000</span></td>
+              <td class="num">SAR 15,000<span class="ref">US$4,000 · ¥27,200</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn6"></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.b7"></td>
+              <td class="num">US$12,000<span class="ref">9,000–15,000</span></td>
+              <td class="num">SAR 45,000<span class="ref">US$12,000 · ¥81,600</span></td>
+              <td class="note ry-tn" data-i18n="ry.bn7"></td>
+            </tr>
+            <tr class="grand"><td data-i18n="ry.secB.sub"></td><td class="num">US$107,000</td><td class="num">SAR 401,250<span class="ref">US$107,000 · ¥727,600</span></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TABLE C — PER-SEEDLING FORECAST -->
+    <section class="section">
+      <h2 class="ry-h2" data-i18n="ry.secC.t"></h2>
+      <p class="ry-d" data-i18n="ry.secC.d"></p>
+      <div class="table-wrap">
+        <table class="ry-tbl">
+          <thead>
+            <tr><th data-i18n="ry.th.item"></th><th class="num" data-i18n="ry.th.gz"></th><th class="num" data-i18n="ry.th.f"></th><th class="num" data-i18n="ry.th.ry"></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="ry.c1"></td>
+              <td class="num">US$0.25<span class="ref">SAR 0.94 · ¥1.7</span></td>
+              <td class="num"><span class="ry-pill up">×1.05</span></td>
+              <td class="num">SAR 0.98<span class="ref">US$0.26 · ¥1.79</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.c2"></td>
+              <td class="num">US$0.07<span class="ref">SAR 0.28 · ¥0.5</span></td>
+              <td class="num"><span class="ry-pill up">×1.1</span></td>
+              <td class="num">SAR 0.3<span class="ref">US$0.08 · ¥0.55</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.c3"></td>
+              <td class="num">US$0.15<span class="ref">SAR 0.55 · ¥1</span></td>
+              <td class="num"><span class="ry-pill down">×0.6</span></td>
+              <td class="num">SAR 0.33<span class="ref">US$0.09 · ¥0.6</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.c4"></td>
+              <td class="num">US$0.16<span class="ref">SAR 0.59 · ¥1.06</span></td>
+              <td class="num"><span class="ry-pill up">×1.21</span></td>
+              <td class="num">SAR 0.71<span class="ref">US$0.19 · ¥1.29</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.c5"></td>
+              <td class="num">US$0.05<span class="ref">SAR 0.19 · ¥0.35</span></td>
+              <td class="num"><span class="ry-pill up">×1.3</span></td>
+              <td class="num">SAR 0.25<span class="ref">US$0.07 · ¥0.45</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.c6"></td>
+              <td class="num">US$0.29<span class="ref">SAR 1.1 · ¥2</span></td>
+              <td class="num"><span class="ry-pill eq">×1</span></td>
+              <td class="num">SAR 1.1<span class="ref">US$0.29 · ¥2</span></td>
+            </tr>
+            <tr>
+              <td data-i18n="ry.c.amort"></td>
+              <td class="num">US$0.03<span class="ref">SAR 0.13 · ¥0.24</span></td>
+              <td class="num"></td>
+              <td class="num">SAR 0.13<span class="ref">US$0.03 · ¥0.24</span></td>
+            </tr>
+            <tr class="grand">
+              <td data-i18n="ry.c.total"></td>
+              <td class="num">SAR 3.65<span class="ref">US$0.97 · ¥6.61</span><span class="ry-ref2"><span data-i18n="ry.c.base"></span> ¥6.61</span></td>
+              <td class="num"></td>
+              <td class="num">SAR 3.81<span class="ref">US$1.02 · ¥6.91</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ry-margin" data-i18n="ry.c.margin"></p>
+    </section>
+
+    <!-- SUMMARY — ESTIMATED RIYADH CAPITAL -->
+    <section class="section">
+      <h2 class="ry-h2" data-i18n="ry.sum.t"></h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px">
+        <div class="metric"><div class="value">SAR 934.9K<span class="ref">US$249.3K · ¥1.7M</span></div><div class="label" data-i18n="ry.s1t"></div><div class="note" data-i18n="ry.s1n"></div></div>
+        <div class="metric"><div class="value">SAR 401.3K<span class="ref">US$107K · ¥727.6K</span></div><div class="label" data-i18n="ry.s2t"></div><div class="note" data-i18n="ry.s2n"></div></div>
+        <div class="metric"><div class="value">SAR 2.12M<span class="ref">US$564.5K · ¥3.84M</span></div><div class="label" data-i18n="ry.s3t"></div><div class="note"><span data-i18n="ry.s3n"></span> · <b class="ry-up">+36.22% <span data-i18n="ry.uo"></span></b></div></div>
+        <div class="metric"><div class="value green">SAR 3.81<span class="ref">US$1.02 · ¥6.91</span></div><div class="label" data-i18n="ry.s4t"></div><div class="note" data-i18n="ry.s4n"></div></div>
+      </div>
+      <p class="cg-note" data-i18n="ry.foot"></p>
+    </section>
+
+    <!-- ASSUMPTIONS & METHODOLOGY -->
+    <section class="section">
+      <h2 class="ry-h2" data-i18n="ry.ass.t"></h2>
+      <div class="card">
+        <ul class="check">
+          <li data-i18n="ry.as1"></li>
+          <li data-i18n="ry.as2"></li>
+          <li data-i18n="ry.as3"></li>
+          <li data-i18n="ry.as4"></li>
+          <li data-i18n="ry.as5"></li>
+          <li data-i18n="ry.as6"></li>
+          <li data-i18n="ry.as7"></li>
+        </ul>
+      </div>
+      <p style="text-align:center"><a class="ry-cta" href="costings.html" data-i18n="ry.cta"></a></p>
+    </section>
+
+  </div>
+</div>
+
+<script src="js/translations.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
