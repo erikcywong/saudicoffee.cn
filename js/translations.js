@@ -385,7 +385,8 @@ const I18N = {
     "ry.hero.badge":"Riyadh Base · Estimated Costings",
     "ry.hero.scn":"Scenario: Scale B — 81 systems · 10.8 acres · 615,000 seedlings/yr",
     "ry.hero.fx":"Planning FX (Sep 2026): US$1 = ¥6.80 (site-wide) · US$1 = SAR 3.75 (SAMA peg). Riyadh figures are planning estimates (±15–25%).",
-    "ry.uo":"vs Guangzhou base"
+    "ry.uo":"vs Guangzhou base",
+    "auth.logout":"Log out"
   },
 
   "zh": {
@@ -760,7 +761,8 @@ const I18N = {
     "ry.hero.badge":"利雅得基地 · 成本估算",
     "ry.hero.scn":"场景：规模 B — 81 套系统 · 10.8 英亩 · 年产 615,000 株",
     "ry.hero.fx":"规划汇率（2026年9月）：US$1 = ¥6.80（全站统一）· US$1 = SAR 3.75（SAMA 钉住）。利雅得数据为规划估算（±15–25%）。",
-    "ry.uo":"对比广州基地"
+    "ry.uo":"对比广州基地",
+    "auth.logout":"退出登录"
   },
 
   "ar": {
@@ -1135,6 +1137,7 @@ const I18N = {
     "ry.hero.badge":"قاعدة الرياض · تقدير التكاليف",
     "ry.hero.scn":"السيناريو: ب — 81 نظامًا · 10.8 فدان · 615,000 شتلة/سنة",
     "ry.hero.fx":"سعر التخطيط (سبتمبر 2026): US$1 = ¥6.80 (معتمد في الموقع) · US$1 = SAR 3.75 (ربط SAMA). أرقام الرياض تقديرات تخطيطية (±15–25%).",
-    "ry.uo":"مقارنة بقاعدة قوانغتشو"
+    "ry.uo":"مقارنة بقاعدة قوانغتشو",
+    "auth.logout":"تسجيل الخروج"
   }
 };

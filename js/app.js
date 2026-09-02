@@ -203,14 +203,36 @@
   /* ---------- access gate (partnership / financials) ---------- */
   window.NAPELL_USERS = ["saudicoffee", "erik.wong", "james"]; /* authorized usernames */
   window.NAPELL_PASS = "wcY385916"; /* unified access password */
+  var PROTECTED_PAGES = ["partnership.html", "financials.html", "costings.html", "costings-riyadh.html"];
+  function currentPath() { return location.pathname.split("/").pop() || "index.html"; }
   function authGate() {
-    var protectedPages = ["partnership.html", "financials.html", "costings.html", "costings-riyadh.html"];
-    var path = location.pathname.split("/").pop() || "index.html";
-    if (protectedPages.indexOf(path) > -1 && sessionStorage.getItem("napell_auth") !== "1") {
-      location.href = "login.html?next=" + encodeURIComponent(path);
+    if (PROTECTED_PAGES.indexOf(currentPath()) > -1 && sessionStorage.getItem("napell_auth") !== "1") {
+      location.href = "login.html?next=" + encodeURIComponent(currentPath());
       return false;
     }
     return true;
+  }
+  /* show a "log out" link on gated pages once signed in, so the login screen
+     can be brought back without closing the tab (sessionStorage is per-tab). */
+  function initLogout() {
+    if (sessionStorage.getItem("napell_auth") !== "1") return;   /* only while signed in */
+    if (PROTECTED_PAGES.indexOf(currentPath()) === -1) return;   /* only on gated pages */
+    var inner = document.querySelector("footer.site-footer .inner");
+    if (!inner || document.getElementById("logoutBtn")) return;
+    var d = document.createElement("div");
+    d.className = "logout-zone";
+    var a = document.createElement("a");
+    a.id = "logoutBtn";
+    a.href = "login.html";
+    a.textContent = t("auth.logout");
+    a.setAttribute("aria-label", t("auth.logout"));
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      sessionStorage.removeItem("napell_auth");
+      location.href = "login.html";
+    });
+    d.appendChild(a);
+    inner.appendChild(d);
   }
 
   /* ---------- boot ---------- */
@@ -219,6 +241,7 @@
     if (!authGate()) return; /* redirect to login before anything else */
     var lang = getLang();
     applyLang(lang || "en");
+    initLogout();
     if (!lang) buildModal(); /* landing: language choice overlay */
     initForm();
   });
